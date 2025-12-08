@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 我的游戏世界</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">🎮 游戏世界</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="screenshots.html">游戏截图</a></li>
+                <li><a href="about.html">关于我</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- 页面标题 -->
+        <section class="hero fade-in">
+            <h1>关于游戏创作者</h1>
+            <p>认识背后的创作者，了解游戏开发的故事</p>
+        </section>
+
+        <!-- 关于内容 -->
+        <section class="content">
+            <div class="section fade-in">
+                <div class="about-content">
+                    <div>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iOTAiIGZpbGw9IiM0Y2M5ZjAiIG9wYWNpdHk9IjAuNyIvPgogICAgPHRleHQgeD0iMTAwIiB5PSIxMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCI+5byg5LiJPC90ZXh0Pgo8L3N2Zz4K" alt="创作者头像" class="creator-image">
+                    </div>
+                    <div>
+                        <h2>个人介绍</h2>
+                        <p>我是一名充满激情的独立游戏开发者，专注于创造独特而有趣的游戏体验。从概念设计到程序开发，从美术制作到音效设计，我享受游戏开发的每一个环节。</p>
+                        
+                        <h3 style="margin-top: 1.5rem; color: #4cc9f0;">🎮 开发理念</h3>
+                        <p>我相信游戏是艺术与技术的完美结合。我的目标是创造能够触动玩家心灵的作品，让每个玩家都能在游戏中找到属于自己的乐趣和感动。</p>
+                        
+                        <h3 style="margin-top: 1.5rem; color: #4cc9f0;">💡 技术栈</h3>
+                        <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                            <li>游戏引擎: Unity, Unreal Engine</li>
+                            <li>编程语言: C#, C++, JavaScript</li>
+                            <li>美术设计: Photoshop, Blender</li>
+                            <li>音效制作: FL Studio, Audacity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section fade-in">
+                <h2>开发历程</h2>
+                <p>我的游戏开发之旅始于对游戏的热爱。从最初的简单小游戏到现在的复杂项目，每一步都是学习和成长的过程。</p>
+                
+                <div style="margin-top: 1.5rem;">
+                    <h3 style="color: #4cc9f0;">📅 重要里程碑</h3>
+                    <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                        <li><strong>2023年</strong> - 开始学习游戏开发基础</li>
+                        <li><strong>2024年</strong> - 完成第一个完整游戏项目</li>
+                        <li><strong>2025年</strong> - 开发当前的主打游戏作品</li>
+                        <li><strong>未来</strong> - 计划发布更多创新游戏</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section fade-in">
+                <h2>联系我</h2>
+                <p>如果您对我的游戏感兴趣，或者想要交流游戏开发经验，欢迎通过以下方式联系我：</p>
+                
+                <div style="margin-top: 1.5rem;">
+                    <p>📧 邮箱: <a href="mailto:developer@example.com" style="color: #4cc9f0;">developer@example.com</a></p>
+                    <p>🐦 社交媒体: <a href="#" style="color: #4cc9f0;">@GameCreator</a></p>
+                    <p>🎮 游戏平台: <a href="#" style="color: #4cc9f0;">Steam创作者页面</a></p>
+                </div>
+                
+                <p style="margin-top: 1.5rem; font-style: italic; color: #ccc;">
+                    "游戏开发是一场永无止境的冒险，我很高兴能与大家分享这段旅程。"
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 个人游戏创作者. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- 音乐控制 -->
+    <div class="music-control" id="musicControl" onclick="toggleMusic()">
+        <i>🎵</i>
+    </div>
+
+    <!-- 背景音乐 -->
+    <audio id="bgMusic" loop>
+        <source src="backmic/4月28日.MP3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // 汉堡菜单功能
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // 背景音乐控制
+        const bgMusic = document.getElementById('bgMusic');
+        const musicControl = document.getElementById('musicControl');
+        
+        function toggleMusic() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicControl.innerHTML = '<i>🔇</i>';
+            } else {
+                bgMusic.pause();
+                musicControl.innerHTML = '<i>🎵</i>';
+            }
+        }
+
+        // 页面加载时自动播放音乐（需要用户交互）
+        document.addEventListener('click', function() {
+            if (bgMusic.paused) {
+                bgMusic.play().catch(() => {
+                    console.log('自动播放被阻止，需要用户交互');
+                });
+            }
+        }, { once: true });
+
+        // 滚动动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('.section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

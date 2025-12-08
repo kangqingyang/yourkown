@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏截图 - 我的游戏世界</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">🎮 游戏世界</a>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="screenshots.html">游戏截图</a></li>
+                <li><a href="about.html">关于我</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- 页面标题 -->
+        <section class="hero fade-in">
+            <h1>游戏截图展示</h1>
+            <p>欣赏游戏的精彩画面和独特视觉效果</p>
+        </section>
+
+        <!-- 截图画廊 -->
+        <section class="content">
+            <div class="section fade-in">
+                <h2>游戏画面集锦</h2>
+                <p>以下展示的是游戏开发过程中的精彩截图，每一张都记录了游戏的成长历程。</p>
+                
+                <div class="gallery" id="screenshotGallery">
+                    <!-- 图片将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 图片模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 个人游戏创作者. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- 音乐控制 -->
+    <div class="music-control" id="musicControl" onclick="toggleMusic()">
+        <i>🎵</i>
+    </div>
+
+    <!-- 背景音乐 -->
+    <audio id="bgMusic" loop>
+        <source src="backmic/2月25日.MP3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // 汉堡菜单功能
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // 背景音乐控制
+        const bgMusic = document.getElementById('bgMusic');
+        const musicControl = document.getElementById('musicControl');
+        
+        function toggleMusic() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                musicControl.innerHTML = '<i>🔇</i>';
+            } else {
+                bgMusic.pause();
+                musicControl.innerHTML = '<i>🎵</i>';
+            }
+        }
+
+        // 加载游戏截图
+        const screenshotGallery = document.getElementById('screenshotGallery');
+        const imageFiles = ['1.jpg', '2.jpg', '3.jpg'];
+        
+        imageFiles.forEach((filename, index) => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.onclick = () => openModal(filename);
+            
+            const img = document.createElement('img');
+            img.src = `pic/${filename}`;
+            img.alt = `游戏截图 ${index + 1}`;
+            img.loading = "lazy";
+            
+            galleryItem.appendChild(img);
+            screenshotGallery.appendChild(galleryItem);
+        });
+
+        // 模态框功能
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        
+        function openModal(filename) {
+            modal.style.display = 'block';
+            modalImg.src = `pic/${filename}`;
+        }
+        
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        
+        // 点击模态框背景关闭
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // ESC键关闭模态框
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // 页面加载时自动播放音乐（需要用户交互）
+        document.addEventListener('click', function() {
+            if (bgMusic.paused) {
+                bgMusic.play().catch(() => {
+                    console.log('自动播放被阻止，需要用户交互');
+                });
+            }
+        }, { once: true });
+
+        // 滚动动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('.section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

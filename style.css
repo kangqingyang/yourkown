@@ -1,0 +1,308 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4cc9f0;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #4cc9f0;
+}
+
+/* 汉堡菜单 */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* 英雄区域 */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    background: rgba(0, 0, 0, 0.3);
+    margin: 2rem 0;
+    border-radius: 15px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #4cc9f0, #f72585);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #ccc;
+}
+
+/* 内容区域 */
+.content {
+    padding: 2rem 0;
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.section h2 {
+    color: #4cc9f0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #4cc9f0, #f72585);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* 音乐控制 */
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.music-control i {
+    font-size: 1.5rem;
+    color: #4cc9f0;
+}
+
+/* 截图画廊 */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* 模态框 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 关于页面样式 */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.creator-image {
+    width: 100%;
+    border-radius: 50%;
+    border: 4px solid #4cc9f0;
+}
+
+/* 页脚 */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* 鼠标光尾特效 */
+.trail-enhanced {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    animation: enhancedTrail 0.8s ease-out forwards;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes enhancedTrail {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 20px 5px rgba(76, 201, 240, 0.8);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) scale(1.2);
+        box-shadow: 0 0 30px 8px rgba(247, 37, 133, 0.6);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+        box-shadow: 0 0 10px 2px rgba(76, 201, 240, 0.3);
+    }
+}
