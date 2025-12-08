@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+< html lang = "应用" >
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>游戏介绍 - 我的游戏世界</title>
-    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
-        <div class="container nav-content">
+
             <a href="index.html" class="logo">🎮 游戏世界</a>
             <ul class="nav-links">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="screenshots.html">游戏截图</a></li>
                 <li><a href="about.html">关于我</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
+<分区班”=“汉堡包”>
+<跨度> < /跨度>
                 <span></span>
                 <span></span>
             </div>
@@ -26,20 +26,20 @@
 
     <!-- 英雄区域 -->
     <div class="container">
-        <section class="hero fade-in">
+< 类="hero fade-in
             <h1>欢迎来到我的游戏世界</h1>
             <p>探索充满创意和激情的游戏作品，体验独特的游戏乐趣</p>
-        </section>
+< / >节
 
         <!-- 游戏介绍 -->
-        <section class="content">
-            <div class="section fade-in">
+< 部分 类 = "开心" >
+
                 <h2>游戏特色</h2>
                 <p>我的游戏融合了创新的玩法、精美的画面和引人入胜的故事情节。每一款游戏都是用心打造的精品，旨在为玩家带来最佳的游戏体验。</p>
                 
-                <div style="margin-top: 2rem;">
+< 跨度 style=“ font - family：宋体；”>
                     <h3>🎯 核心特点</h3>
-                    <ul style="margin-left: 2rem; margin-top: 1rem;">
+< 跨度 style=" font - family：宋体；margin-top: 1快速眼动;" >
                         <li>创新的游戏机制</li>
                         <li>精美的视觉效果</li>
                         <li>沉浸式的音效体验</li>
@@ -49,26 +49,26 @@
                 </div>
             </div>
 
-            <div class="section fade-in">
+
                 <h2>最新作品</h2>
-                <p>我正在开发一款全新的冒险游戏，结合了探索、解谜和战斗元素。游戏预计将在今年晚些时候发布，敬请期待！</p>
+                <p>我正在开发一款全新的冒险游戏，结合了探索、解谜和战斗元素。游戏试玩链接“https://kangqingyang.github.io/youkonw22”/ </p>
                 
                 <a href="screenshots.html" class="btn" style="margin-top: 1rem;">查看游戏截图</a>
             </div>
 
-            <div class="section fade-in">
+
                 <h2>游戏理念</h2>
                 <p>我相信游戏不仅是娱乐，更是艺术和技术的完美结合。我的目标是创造能够触动玩家心灵的游戏作品，让每个玩家都能在游戏中找到属于自己的乐趣。</p>
             </div>
-        </section>
+< / >节
     </div>
 
     <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
+<页脚类=“页脚”>
+< div 类 = " container”>
             <p>&copy; 2025 个人游戏创作者. 保留所有权利.</p>
         </div>
-    </footer>
+< /页脚>
 
     <!-- 音乐控制 -->
     <div class="music-control" id="musicControl" onclick="toggleMusic()">
@@ -76,24 +76,24 @@
     </div>
 
     <!-- 背景音乐 -->
-    <audio id="bgMusic" loop>
-        <source src="backmic/2月24日.MP3" type="audio/mpeg">
-    </audio>
 
-    <script>
+        <source src="backmic/2月24日.MP3" type="audio/mpeg">
+< /音频>
+
+< >脚本
         // 汉堡菜单功能
-        const hamburger = document.querySelector('.hamburger');
+const hamburger = document.querySelector('.hamburger')；
         const navLinks = document.querySelector('.nav-links');
         
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+navLinks.classList.toggle(“活跃的”);
         });
 
         // 背景音乐控制
-        const bgMusic = document.getElementById('bgMusic');
-        const musicControl = document.getElementById('musicControl');
+const bgMusic = document.getElementById('bgMusic')；
+const musicControl =文档。
         
-        function toggleMusic() {
+函数toggleMusic() {
             if (bgMusic.paused) {
                 bgMusic.play();
                 musicControl.innerHTML = '<i>🔇</i>';
@@ -104,17 +104,17 @@
         }
 
         // 页面加载时自动播放音乐（需要用户交互）
-        document.addEventListener('click', function() {
+文档。addEventListener('click', function() {
             if (bgMusic.paused) {
-                bgMusic.play().catch(() => {
+bgMusic.play().catch() => {
                     console.log('自动播放被阻止，需要用户交互');
                 });
             }
-        }, { once: true });
+}，{一次：true})；
 
         // 滚动动画
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+条目。forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in');
                 }
@@ -223,3 +223,4 @@
     </script>
 </body>
 </html>
+
